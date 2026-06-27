@@ -1,0 +1,27 @@
+{
+  "personas": [
+    {
+      "name": "C. (comerciante)",
+      "role": "comerciante obligado a facturación electrónica",
+      "primary": true
+    },
+    {
+      "name": "Proveedor / Gestor",
+      "role": "proveedor de facturación electrónica y firmas (gestor)",
+      "primary": true
+    }
+  ],
+  "pains": [
+    { "id": "errores-tecnicos-ininteligibles",        "source": "entrevista-01-comerciante.md",    "persona": "C. (comerciante)" },
+    { "id": "bloqueo-en-punto-de-venta",              "source": "entrevista-01-comerciante.md",    "persona": "C. (comerciante)" },
+    { "id": "firma-vencida-sin-aviso",                "source": "entrevista-01-comerciante.md",    "persona": "C. (comerciante)" },
+    { "id": "soporte-lento-sin-resolucion",           "source": "entrevista-01-comerciante.md",    "persona": "C. (comerciante)" },
+    { "id": "miedo-a-multas",                         "source": "entrevista-01-comerciante.md",    "persona": "C. (comerciante)" },
+    { "id": "seguimiento-manual-firmas",              "source": "entrevista-02-renovaciones.md",   "persona": "Proveedor / Gestor" },
+    { "id": "renovacion-reactiva",                    "source": "entrevista-02-renovaciones.md",   "persona": "Proveedor / Gestor" },
+    { "id": "costos-renovacion-urgente",              "source": "entrevista-02-renovaciones.md",   "persona": "Proveedor / Gestor" },
+    { "id": "alta-manual-costosa",                    "source": "entrevista-03-onboarding.md",     "persona": "Proveedor / Gestor" },
+    { "id": "soporte-repetitivo",                     "source": "entrevista-03-onboarding.md",     "persona": "Proveedor / Gestor" },
+    { "id": "cuello-botella-personal",                "source": "entrevista-03-onboarding.md",     "persona": "Proveedor / Gestor" }
+  ]
+}

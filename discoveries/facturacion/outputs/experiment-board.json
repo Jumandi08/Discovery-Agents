@@ -1,0 +1,46 @@
+{
+  "discovery": "facturacion",
+  "generated": "2026-06-20",
+  "hypotheses": [
+    {
+      "id": "H-01",
+      "assumption": "Con alertas anticipadas, el Proveedor/Gestor pasa de renovación reactiva (tras el vencimiento) a proactiva (antes del vencimiento), que es el outcome central del MVP. (renovacion-reactiva, costos-renovacion-urgente — entrevista-02-renovaciones.md)",
+      "hypothesis": "Creemos que el Proveedor/Gestor renovará firmas con anticipación si recibe alertas automáticas N días antes del vencimiento, porque su problema hoy es la falta de visibilidad, no la falta de voluntad.",
+      "metric": "% de renovaciones de la cartera del proveedor piloto completadas antes de la fecha de vencimiento (vs. después).",
+      "threshold": "≥80% de las firmas que vencen durante un piloto de 30 días se renuevan con ≥7 días de anticipación.",
+      "experiment": "Piloto Mago de Oz de 30 días con 1 proveedor real: sobre una planilla de cartera, enviamos a mano (sin construir el sistema) las alertas N días antes de cada vencimiento y medimos cuántas renovaciones ocurren a tiempo.",
+      "decision": "Si pasa (≥80% a tiempo) → la propuesta de valor se sostiene; construir las alertas automáticas. Si falla (<80%) → la alerta no basta; investigar la barrera real (precio de renovación, proceso del ente tributario) y pivotar antes de construir.",
+      "risk": "alto"
+    },
+    {
+      "id": "H-02",
+      "assumption": "El Proveedor/Gestor adoptará la herramienta y mantendrá al día la fecha de vencimiento de cada cliente de su cartera, en vez de seguir con su seguimiento manual. (seguimiento-manual-firmas — entrevista-02-renovaciones.md)",
+      "hypothesis": "Creemos que el Proveedor/Gestor cargará y mantendrá actualizadas las fechas de vencimiento de su cartera si le damos un tablero simple de alta de clientes, porque ya hace ese seguimiento de forma manual y el dolor de la renovación reactiva es suyo.",
+      "metric": "% de clientes activos de la cartera del proveedor piloto con fecha de vencimiento registrada y vigente en el tablero.",
+      "threshold": "≥90% de los clientes activos del proveedor piloto tienen su fecha de vencimiento cargada y correcta en el tablero a los 14 días del alta.",
+      "experiment": "Piloto Concierge de 2 semanas: damos al proveedor una planilla compartida (Google Sheets) como tablero de cartera y le pedimos cargar sus clientes; al final auditamos cobertura y exactitud de los datos. Costo ~0.",
+      "decision": "Si pasa (≥90%) → construir el módulo de registro/tablero confiando en la adopción. Si falla (<90%) → identificar la fricción (tiempo de carga, falta de incentivo), rediseñar el alta (p. ej. importar desde su planilla actual) o descartar el modelo de carga manual antes de construir.",
+      "risk": "alto"
+    },
+    {
+      "id": "H-03",
+      "assumption": "El cliente final actúa sobre la alerta (inicia o autoriza la renovación) con tiempo suficiente antes del vencimiento. (firma-vencida-sin-aviso — entrevista-01-comerciante.md; entrevista-02-renovaciones.md)",
+      "hypothesis": "Creemos que los clientes alertados directamente iniciarán la renovación a tiempo si reciben un aviso claro N días antes, porque su dolor es el bloqueo en el punto de venta, no el desinterés.",
+      "metric": "% de clientes que, tras recibir la alerta, responden o inician el trámite de renovación dentro de 7 días.",
+      "threshold": "≥60% de los clientes alertados inician la renovación dentro de los 7 días del aviso.",
+      "experiment": "Prueba dirigida con la cartera del proveedor piloto: enviar la alerta a 15–20 clientes con vencimiento próximo y medir cuántos reaccionan en 7 días. Caja de tiempo: 2 semanas.",
+      "decision": "Si pasa (≥60%) → mantener la alerta directa al cliente en el MVP. Si falla (<60%) → la alerta directa no mueve al cliente; pivotar a que la alerta empodere al proveedor para gestionar la renovación por él, o descartar el aviso directo.",
+      "risk": "medio"
+    },
+    {
+      "id": "H-04",
+      "assumption": "El canal elegido (email o WhatsApp) es el que el cliente revisa a tiempo. (entrevista-02-renovaciones.md)",
+      "hypothesis": "Creemos que WhatsApp logrará mayor lectura/respuesta que el email para los avisos de vencimiento si enviamos la misma alerta por ambos canales, porque el comerciante revisa el celular más que el correo.",
+      "metric": "Tasa de lectura/respuesta de la alerta por canal (WhatsApp vs. email) en una prueba A/B.",
+      "threshold": "El canal ganador alcanza ≥50% de lectura/respuesta en 72 h, con una diferencia ≥15 puntos sobre el otro canal.",
+      "experiment": "A/B de bajo costo: dividir a los clientes alertados en dos grupos (email vs. WhatsApp) con el mismo mensaje y medir lectura/respuesta a 72 h. Caja de tiempo: 1 semana.",
+      "decision": "Si pasa (un canal ≥50% y gana por ≥15 pts) → adoptar ese canal como principal del MVP. Si falla (ninguno llega a 50%) → ambos canales son débiles; investigar un canal alternativo (SMS o llamada) antes de comprometer el MVP.",
+      "risk": "medio"
+    }
+  ]
+}

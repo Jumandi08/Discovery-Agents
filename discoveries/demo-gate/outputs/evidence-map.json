@@ -1,0 +1,26 @@
+{
+  "personas": [
+    {
+      "name": "V. (vendedor)",
+      "role": "vendedor",
+      "primary": true
+    }
+  ],
+  "pains": [
+    {
+      "id": "fallo-en-cobro",
+      "source": "entrevista-vendedor-real.md",
+      "persona": "V. (vendedor)"
+    },
+    {
+      "id": "frecuencia-alta-fallas",
+      "source": "entrevista-vendedor-real.md",
+      "persona": "V. (vendedor)"
+    },
+    {
+      "id": "soporte-lento",
+      "source": "entrevista-vendedor-real.md",
+      "persona": "V. (vendedor)"
+    }
+  ]
+}
